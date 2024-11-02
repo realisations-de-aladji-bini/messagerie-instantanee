@@ -1,0 +1,152 @@
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 5;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.3em 1.2em;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: dodgerblue;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
+textarea{
+  border: 1px solid #747bff;
+  padding: 5px 2px 0px 10px;
+  border-radius: 30px;
+  width: 75%;
+  height: 35px;
+}
+.userName{
+  font-style: italic;
+  margin-right: 95px;
+}
+input{
+  border-radius: 25px;
+  padding-left: 10px;
+  height: 30px;
+  border: 1px solid #747bff;
+}
+.connectPannel button{
+  width: 100%;
+  box-sizing: border-box;
+}
+/* Message annimé de bienvenu*/
+.welcome-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60.66%; /* la largeur droite reste de la page */
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+  z-index: 9999; /* Le message s'affiche au-dessus de tout le reste */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Commence invisible */
+  animation: slideIn 1.5s forwards ease-in-out; /* Animation d'entrée */
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 20px;
+}
+.welcome-message h2,
+.welcome-message p {
+  opacity: 0;
+  animation: fadeIn 5.5s forwards ease-in-out;
+  animation-delay: 0.5s;
+}
+.welcome-message h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5em;
+  color: blue;
+  margin-bottom: 20px;
+}
+.welcome-message p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #666666;
+  line-height: 1.5;
+}
+.welcome-emoji{
+  display: inline-block;
+  animation: greetingAnimation 1s infinite;
+  animation-delay: 5s;
+}
+.happy-emoji{
+  display: inline-block;
+  animation: happyAnimation 1s infinite;
+  animation-delay: 10s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes greetingAnimation {
+  0% { transform: rotate(0); }
+  50% { transform: rotate(-10deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes happyAnimation {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(2.02); }
+}
+

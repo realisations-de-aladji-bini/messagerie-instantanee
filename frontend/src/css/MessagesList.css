@@ -1,0 +1,54 @@
+.messagesListBox {
+    height: 80%;
+}
+
+.messagesList {
+    list-style-type: none;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 85%;
+}
+
+.messagesList ul {
+    list-style: none;
+}
+
+.messagesList li {
+    margin-bottom: 10px;
+}
+
+.messagesList .message {
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 50%;
+}
+
+.messagesList .UserIsAuthor {
+    text-align: right;
+}
+
+.messagesList .UserIsAuthor .message {
+    background-color: #DCF8C6;
+    margin-left: auto;
+ 
+}
+
+.messagesList .author {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.messagesList li:not(.UserIsAuthor) .message {
+    background-color: #F3F3F3;
+}
+
+.messagesList li:not(.UserIsAuthor) .author {
+    text-align: left;
+}
+.time{
+    float: right;
+    color: gray;
+    position: fixed;
+    text-align: end;
+}

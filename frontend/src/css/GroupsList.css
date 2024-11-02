@@ -1,0 +1,10 @@
+.groupListBox {
+    display: block;
+}
+
+h5 {
+    font-weight: bold;
+}
+.groupList li:hover{
+    cursor: pointer;
+}

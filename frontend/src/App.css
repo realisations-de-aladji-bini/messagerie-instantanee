@@ -1,0 +1,5 @@
+
+.connectPannel {
+  display: flex;
+  flex-direction: column;
+}
