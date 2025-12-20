@@ -1,54 +1,131 @@
 .messagesListBox {
-    height: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #E5DDD5;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .messagesList {
     list-style-type: none;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 85%;
+    padding: 10px;
+    margin: 0;
+    flex: 1;
+    background: #E5DDD5;
 }
 
 .messagesList ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .messagesList li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    display: flex;
 }
 
 .messagesList .message {
-    padding: 8px;
+    padding: 10px 12px;
     border-radius: 8px;
-    max-width: 50%;
+    max-width: 65%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.message-content {
+    word-wrap: break-word;
+    padding-right: 10px;
 }
 
 .messagesList .UserIsAuthor {
-    text-align: right;
+    justify-content: flex-end;
 }
 
 .messagesList .UserIsAuthor .message {
     background-color: #DCF8C6;
-    margin-left: auto;
- 
 }
 
 .messagesList .author {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #075E54;
 }
 
 .messagesList li:not(.UserIsAuthor) .message {
-    background-color: #F3F3F3;
+    background-color: white;
 }
 
 .messagesList li:not(.UserIsAuthor) .author {
     text-align: left;
 }
-.time{
-    float: right;
-    color: gray;
-    position: fixed;
-    text-align: end;
+
+.time {
+    font-size: 0.7em;
+    color: #667781;
+    align-self: flex-end;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.tick {
+    color: #4FC3F7;
+    font-size: 1em;
+}
+
+.date-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 15px 0;
+}
+
+.date-separator span {
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #667781;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    text-transform: capitalize;
+}
+
+.messageAdder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.messageAdder input[type="text"] {
+    width: 100%;
+    height: 50px;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.messageAdder input[type="text"]:focus {
+    outline: none;
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.messageAdder button {
+    width: 100%;
+    padding: 12px 25px;
+    height: 50px;
 }

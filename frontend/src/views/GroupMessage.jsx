@@ -45,7 +45,7 @@ function GroupMessage({group}) {
 
     if(group){
         return (
-            <Container title={`Discussion sur le group ${group.name}`} className="messageBox">
+            <Container title={`Discussions dans le groupe ${group.name}`} className="messageBox">
                 
                 <MessagesList messages={messages} members={members}/>
             

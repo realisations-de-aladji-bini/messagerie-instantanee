@@ -26,11 +26,17 @@ function MessageAdder({onMessageAdded, groupId}){
         messageRef.current.value=''
     }
 
+    function handleKeyDown(e){
+        if(e.key === 'Enter'){
+            handleAdd()
+        }
+    }
+
 
     return (
         <div className="messageAdder">
-            <input ref={messageRef} type="text" placeholder='Message' onFocus={()=>messageRef.current.value = ''}/>
-            <Button title={"Envoyer"} clickFonction={handleAdd} />
+            <input ref={messageRef} type="text" placeholder='Saisissez votre nouveau message ici' onKeyDown={handleKeyDown}/>
+            <Button title={"Envoyer le message"} clickFonction={handleAdd} />
         </div>
     )
 

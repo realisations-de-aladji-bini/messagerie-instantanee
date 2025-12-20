@@ -9,9 +9,20 @@ a:hover {
 }
 
 body {
-  margin: 5;
-  display: flex;
-  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -52,7 +63,7 @@ textarea{
   padding: 5px 2px 0px 10px;
   border-radius: 30px;
   width: 75%;
-  height: 35px;
+  height: 60px;
 }
 .userName{
   font-style: italic;
@@ -64,37 +75,13 @@ input{
   height: 30px;
   border: 1px solid #747bff;
 }
+/* Styles existants conserves pour la compatibilite */
 .connectPannel button{
   width: 100%;
   box-sizing: border-box;
 }
-/* Message annimé de bienvenu*/
-.welcome-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 60.66%; /* la largeur droite reste de la page */
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
-  z-index: 9999; /* Le message s'affiche au-dessus de tout le reste */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0; /* Commence invisible */
-  animation: slideIn 1.5s forwards ease-in-out; /* Animation d'entrée */
-}
-
-.welcome-message {
-  text-align: center;
-  padding: 20px;
-}
-.welcome-message h2,
-.welcome-message p {
-  opacity: 0;
-  animation: fadeIn 5.5s forwards ease-in-out;
-  animation-delay: 0.5s;
-}
+/* Message anime de bienvenu*/
+/* Les styles welcome-container sont maintenant dans App.css */
 .welcome-message h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 2.5em;

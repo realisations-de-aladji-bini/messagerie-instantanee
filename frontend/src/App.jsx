@@ -17,14 +17,14 @@ function App() {
     }
     return(
         <div className='connectPannel'>
-          <Login preFilledLogin={registeredLogin}/>
-          <Register setRegisteredLogin={setRegisteredLogin}/>
           <div className="welcome-container">
             <div className="welcome-message">
                 <h2> <span className='welcome-emoji'> &#128075;</span> XChangeo</h2>
-              <p> Votre application de messagerie inégalée !    <span className='happy-emoji' > &#128522;</span></p>
+              <p> Votre application de messagerie inegalée !    <span className='happy-emoji' > &#128522;</span></p>
             </div>
           </div>
+          <Login preFilledLogin={registeredLogin}/>
+          <Register setRegisteredLogin={setRegisteredLogin}/>
         </div>
     )
   }

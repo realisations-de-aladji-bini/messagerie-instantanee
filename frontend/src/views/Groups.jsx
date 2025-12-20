@@ -51,7 +51,7 @@ function Groups(){
     return (
         <div className="groupsBox">
             <div className="groupsListBox">            
-            <Container title='Mes groupe'>
+            <Container title='Tous mes groupes'>
                 <GroupsList title = 'Ceux dont je suis membre' groups={ memberGroups} setSelectedGroup={setSelectedGroup} type='member'/>
                 <GroupsList title = "Ceux que j'administre" groups={ adminGroups} setSelectedGroup={setSelectedGroup} type='admin'/>
                 <GroupAdder onGroupAdded={updateGroups}/>

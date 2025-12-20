@@ -52,7 +52,7 @@ function Register({setRegisteredLogin}){
     }
   }
   return (
-    <Field title='Pas encore de compte ? Enregistrez vous' handleSubmit={handleRegister} errorMessage={erreurMessage} className={'register'}>
+    <Field title='Pas encore de compte ? Créez-en un !' handleSubmit={handleRegister} errorMessage={erreurMessage} className={'register'}>
         <label>Nom</label>
         <input ref={nameRef} type="text" placeholder={'Prénom Nom '} onChange={verifie} className='name'/>
         <label>Email</label>

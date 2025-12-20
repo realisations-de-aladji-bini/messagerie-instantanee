@@ -30,8 +30,8 @@ function GroupAdder({onGroupAdded}) {
 
     return (
         <div className="groupAdder">
-            <input ref={groupNameRef} type="text" placeholder='Créer un groupe' onFocus={()=>groupNameRef.current.value = ''}/>
-            <Button title={"Créer"} clickFonction={handleAdd} />
+            <input ref={groupNameRef} type="text" placeholder='Saisir un nouveau nom de groupe' onFocus={()=>groupNameRef.current.value = ''}/>
+            <Button title={"Créer le groupe"} clickFonction={handleAdd} />
         </div>
     )
 }

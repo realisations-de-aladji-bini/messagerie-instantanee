@@ -7,9 +7,9 @@ function Field({title, children, handleSubmit, errorMessage,className}){
   return (
     // if no className guard
     <fieldset className={`${className || ''}`}> 
-      <legend>{title}</legend>
+      <h3 className="field-title">{title}</h3>
       {children}
-      <Button clickFonction={handleSubmit} title={'OK'}/>
+      <Button clickFonction={handleSubmit} title={'Soumettre ma requête'}/>
       <div style={{color:"red"}}> {errorMessage}</div>
     </fieldset>
   )
