@@ -6,9 +6,13 @@ import '../css/Accueil.css';
 
 
 function Accueil() {
-    const {user} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
     const {setToken} = useContext(TokenContext)
 
+    function handleLogout() {
+        setToken(null)
+        setUser(null)
+    }
 
     return (
         <div className="accueil-container">
@@ -16,10 +20,10 @@ function Accueil() {
                 <div className="header-content">
                     <div className="welcome-section">
                         <h1>XChangeo</h1>
-                        <p className="welcome-text">Bienvenue, <span className="user-name">{user.name}</span></p>
+                        <p className="welcome-text"> <span className="user-name">{user.name}</span></p>
                     </div>
                     <div className="logout-button">
-                        <Button clickFonction={()=>setToken(null)} title={'Se deconnecter'}/>
+                        <Button clickFonction={handleLogout} title={'Se déconnecter'}/>
                     </div>
                 </div>
             </header>

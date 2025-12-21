@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Login from './views/Login'
 import Accueil from './views/Accueil'
@@ -7,9 +7,30 @@ import { UserContext, TokenContext } from './ConnectionContext';
 import Register from './views/Register'
 
 function App() {
-  const [token, setToken] = useState(undefined)
-  const [user, setUser] = useState(undefined)
+  const [token, setToken] = useState(() => {
+    return localStorage.getItem('token') || undefined
+  })
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user')
+    return savedUser ? JSON.parse(savedUser) : undefined
+  })
   const [registeredLogin, setRegisteredLogin] = useState(undefined);
+
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem('token', token)
+    } else {
+      localStorage.removeItem('token')
+    }
+  }, [token])
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user))
+    } else {
+      localStorage.removeItem('user')
+    }
+  }, [user])
 
   function ConnectPannel() {
     if (token){
