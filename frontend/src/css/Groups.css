@@ -9,7 +9,9 @@
 
 .groupsListBox {
     flex: 0 0 350px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .groupInteractionBox {
@@ -18,4 +20,26 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.empty-group-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #E5DDD5;
+    border-radius: 10px;
+}
+
+.empty-group-message {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1em;
+    max-width: 400px;
+}
+
+.empty-group-message p {
+    margin: 0;
+    line-height: 1.6;
 }

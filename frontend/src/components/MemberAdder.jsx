@@ -2,10 +2,11 @@ import { useContext, useRef } from "react"
 import Button from "./Button"
 import { TokenContext } from "../ConnectionContext"
 import { host} from "../utilities/apis"
+import '../css/GroupInfo.css'
 
 
 
-function MemberAdder({onUserAdded,groupId,users}) {
+function MemberAdder({onUserAdded,groupId,users,title}) {
     const { token } = useContext(TokenContext)
     const memberRef = useRef(null)
 
@@ -28,10 +29,15 @@ function MemberAdder({onUserAdded,groupId,users}) {
 
     return (    
         <div className="memberAdder">
-            <select ref={memberRef}>
-                {users.map( (user,indice) => <option key={indice} value={user.id}>{user.name} </option> )}
-            </select>
-            <Button title={"Ajouter"} clickFonction={handleAdd} />
+            <h4>{title}</h4>
+            <div className="member-add-controls">
+                <select ref={memberRef}>
+                    {users.map( (user,indice) => <option key={indice} value={user.id}>{user.name} </option> )}
+                </select>
+                <button className="add-member-button" onClick={handleAdd}>
+                    Ajouter
+                </button>
+            </div>
         </div>
     )
 }

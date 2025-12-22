@@ -10,8 +10,14 @@ const groups = db.define('groups', {
   name: {
     type: Sequelize.STRING(128),
     validate: {
-      is: /^[a-z\-'\s]{1,128}$/i
+      len: [1, 128],
+      notEmpty: true
     }
+  },
+  createdAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+    defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
   }
 
 }, { timestamps: false })

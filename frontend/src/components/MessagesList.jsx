@@ -6,6 +6,19 @@ import '../css/MessagesList.css'
 function MessagesList({messages, members}){
     const {user} = useContext(UserContext)
 
+    function parseMarkdown(text) {
+        let parsed = text
+        // Gras: **texte**
+        parsed = parsed.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        // Italique: *texte*
+        parsed = parsed.replace(/\*(.+?)\*/g, '<em>$1</em>')
+        // Barré: ~texte~
+        parsed = parsed.replace(/~(.+?)~/g, '<s>$1</s>')
+        // Code: `texte`
+        parsed = parsed.replace(/`(.+?)`/g, '<code>$1</code>')
+        return parsed
+    }
+
     function formatTime(dateString) {
         const date = new Date(dateString);
         return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
@@ -41,6 +54,35 @@ function MessagesList({messages, members}){
         return new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
     }
 
+    function formatNotification(content, authorId) {
+        const addMatch = content.match(/^(.+?) a ajouté (.+)$/)
+        if (addMatch) {
+            const authorName = addMatch[1]
+            const addedName = addMatch[2]
+            
+            if (authorId === user.id) {
+                return `Vous avez ajouté ${addedName}`
+            }
+            
+            if (addedName === user.name) {
+                return `${authorName} vous a ajouté`
+            }
+        }
+
+        const createMatch = content.match(/^(.+?) a créé le groupe$/)
+        if (createMatch) {
+            const creatorName = createMatch[1]
+            
+            if (authorId === user.id) {
+                return `Vous avez créé le groupe`
+            }
+            
+            return `${creatorName} a créé le groupe`
+        }
+        
+        return content
+    }
+
     return (
     <div className="messagesListBox">
     <ul className="messagesList">
@@ -57,20 +99,24 @@ function MessagesList({messages, members}){
                             <span>{formatDate(message.createdAt)}</span>
                         </div>
                     )}
-                    {author && author.id === user.id ? (
+                    {message.type === 'notification' ? (
+                        <div className="notification-message">
+                            <span>{formatNotification(message.content, message.userId)}</span>
+                        </div>
+                    ) : author && author.id === user.id ? (
                         <li className="UserIsAuthor">
                             <div className="message">
-                                <div className="message-content">{message.content}</div>
+                                <div className="message-content" dangerouslySetInnerHTML={{ __html: parseMarkdown(message.content) }}></div>
                                 <span className="time">{formatTime(message.createdAt)} <span className="tick">&#10004;</span></span>
                             </div>
                         </li>
                     ) : (
                         <li>
                             <div className="message">
-                                <div className="message-content">{message.content}</div>
+                                <div className="author">{author ? author.name: 'unknown'}</div>
+                                <div className="message-content" dangerouslySetInnerHTML={{ __html: parseMarkdown(message.content) }}></div>
                                 <span className="time">{formatTime(message.createdAt)}</span>
                             </div>
-                            <div className="author">{author ? author.name: 'unknown'}</div>
                         </li>
                     )}
                 </div>

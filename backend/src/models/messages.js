@@ -12,6 +12,11 @@ const messages = db.define('messages', {
   content: {
     type: Sequelize.STRING(128)
   },
+  type: {
+    type: Sequelize.STRING(20),
+    defaultValue: 'message',
+    allowNull: false
+  },
   createdAt: {
     type: Sequelize.DATE,
     validate: {

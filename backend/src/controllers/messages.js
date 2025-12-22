@@ -49,7 +49,7 @@ module.exports = {
         where: { id: gid },
         attributes: []
       }],
-      attributes: ['id', 'content', 'userId', 'createdAt']
+      attributes: ['id', 'content', 'type', 'userId', 'createdAt']
     })
     res.json({ status: true, message: 'Returning group\'s messages', groupMessages })
   },

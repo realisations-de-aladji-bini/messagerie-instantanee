@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Login from './views/Login'
 import Accueil from './views/Accueil'
@@ -51,13 +52,18 @@ function App() {
   }
 
   return (
-      <main>
-        <TokenContext.Provider value={{token, setToken}}>
-          <UserContext.Provider value={{user,setUser}}>
-        <ConnectPannel />
-      </UserContext.Provider>
-      </TokenContext.Provider>
-    </main>
+      <BrowserRouter>
+        <main>
+          <TokenContext.Provider value={{token, setToken}}>
+            <UserContext.Provider value={{user,setUser}}>
+              <Routes>
+                <Route path="/" element={token ? <Navigate to="/groups" /> : <ConnectPannel />} />
+                <Route path="/groups/*" element={token ? <Accueil /> : <Navigate to="/" />} />
+              </Routes>
+            </UserContext.Provider>
+          </TokenContext.Provider>
+        </main>
+      </BrowserRouter>
   )
 }
 

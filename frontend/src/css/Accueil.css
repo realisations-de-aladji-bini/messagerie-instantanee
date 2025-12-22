@@ -4,6 +4,7 @@
     background: #D9DBD5;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .accueil-header {

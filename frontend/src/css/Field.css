@@ -88,6 +88,16 @@ button:active {
     transform: translateY(0);
 }
 
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+button:disabled:hover {
+    transform: none;
+}
+
 .error-message {
     color: #e74c3c;
     font-size: 0.9em;

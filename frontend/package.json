@@ -1,7 +1,8 @@
 {
-  "name": "XChangeo",
+  "name": "xchangeo",
   "private": true,
-  "version": "1.1.0",
+  "version": "2.1.0",
+  "description": "Ajout de nouvelles fonctionnalités et amléliorations diverses (UX/UI).",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,7 +15,8 @@
     "cypress": "^13.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.11.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

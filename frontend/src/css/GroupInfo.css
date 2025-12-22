@@ -1,0 +1,405 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #075E54;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.group-header:hover {
+    background: #064e45;
+}
+
+.group-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.info-icon {
+    font-size: 1.5em;
+    transition: transform 0.3s ease;
+}
+
+.group-info-panel {
+    background: #f5f5f5;
+    border-bottom: 2px solid #d0d0d0;
+    max-height: 400px;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 400px;
+        opacity: 1;
+    }
+}
+
+.group-info-section {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.group-info-section:last-child {
+    border-bottom: none;
+}
+
+.group-info-section h4 {
+    margin: 0 0 15px 0;
+    color: #075E54;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.group-info-section p {
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.group-info-section p em {
+    font-style: italic;
+    color: #666;
+}
+
+.group-name {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.group-name button { 
+    background: #25D366; 
+    width: auto; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 0.9em; 
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.group-name button:hover {
+    transform: none;
+}
+
+.group-name button:focus {
+    outline: none;
+}
+
+.edit-group-name {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.edit-group-name strong {
+    align-self: center;
+    white-space: nowrap;
+    margin-bottom: 12px;
+}
+.edit-group-name input {
+    width: 50%;
+    height: 45px;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.edit-group-name input:focus {
+    outline: none;
+    border-color: #25D366;
+}
+
+.edit-group-name button {
+    padding: 10px 20px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.edit-group-name button:hover {
+    background: #20bd5a;
+}
+
+.edit-group-name button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#update-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#update-buttons button.cancel-btn {
+    background: #6c757d;
+    font-size: 0.9em;
+
+}
+
+#update-buttons button.cancel-btn:hover {
+    background: #5a6268;
+}
+
+#update-buttons button:first-child {
+    padding: 8px 6px;
+    min-width: 60px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+#update-buttons button:first-child:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#update-buttons button:first-child:not(:disabled) {
+    background: #25D366;
+    color: white;
+}
+
+#update-buttons button:first-child:not(:disabled):hover {
+    background: #20bd5a;
+}
+
+#update-buttons button.cancel-btn {
+    padding: 8px 6px;
+    min-width: 60px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.group-creation-info {
+    margin-top: 10px;
+}
+
+.delete-group-btn {
+    padding: 6px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85em;
+    transition: background 0.3s ease;
+    width: auto;
+    margin-top: 8px;
+    display: block;
+}
+
+.delete-group-btn:hover {
+    background: #c82333;
+}
+
+.remove-member-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: none;
+}
+
+.remove-member-btn:hover {
+    background: #dc3545;
+}
+
+
+.memberAdder {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 10px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+}
+
+.memberAdder select {
+    flex: 1;
+    padding: 10px 12px;
+    width: 100%;
+    background: white;
+    border: 2px solid #d0d0d0;
+    border-radius: 8px;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.memberAdder select:focus {
+    outline: none;
+    border-color: #25D366;
+}
+
+.memberAdder button {
+    padding: 10px 18px;
+    font-size: 0.9em;
+    width: auto;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.members-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.members-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.members-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.members-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.members-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+}
+
+.member-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.membersListBox {
+    padding: 20px;
+}
+
+.membersListBox h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #075E54;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.memberAdder {
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.memberAdder h4 {
+    margin-bottom: 15px;
+    color: #075E54;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.member-add-controls {
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    align-items: center;
+}
+
+.memberAdder select {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.add-member-button {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.admin-badge {
+    background: #25D366;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.messages-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.add-member {
+    margin-top: 20px;
+    padding-top: 15px; 
+    border-top: 1px solid #e0e0e0;
+}
+
+.add-member h4 {
+    margin-top: 20px;
+}
